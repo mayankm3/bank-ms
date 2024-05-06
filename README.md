@@ -2,12 +2,15 @@ Enterprise and production ready Microservice with Spring, Spring Cloud and Docke
 
 ![Microservices](https://github.com/mayankm3/bank-ms/assets/152583493/8d8dee90-ce53-42e8-85b8-68cf7e4c2223)
 
+How to run the application using Docker
+Run `mvn compile jib:dockerBuild` to generate a docker image using Google Jib.
+Run `docker-compose up -d` in bank-ms/docker-compose/prod/ to start the applications.
+
 ## Maven Commands used
 
 |     Maven Command       |     Description          |
 | ------------- | ------------- |
 | "mvn clean install -Dmaven.test.skip=true" | To generate a jar inside target folder |
-| "mvn compile jib:dockerBuild" | To generate a docker image using Google Jib. No need of Dockerfile |
 
 
 ## Apache Benchmark command used
