@@ -1,5 +1,6 @@
 Enterprise and production ready Microservice with Spring, Spring Cloud and Docker
 
+![Microservices](https://github.com/mayankm3/bank-ms/assets/152583493/8d8dee90-ce53-42e8-85b8-68cf7e4c2223)
 
 ## Maven Commands used
 
