@@ -13,10 +13,12 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>configserver</name>
 	<description>config server for bank microservice</description>
+	
 	<properties>
 		<java.version>17</java.version>
 		<spring-cloud.version>2023.0.0</spring-cloud.version>
 	</properties>
+	
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -33,6 +35,7 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+	
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
@@ -57,7 +60,7 @@
 				<version>3.4.0</version>
 				<configuration>
 					<to>
-						<image>syr60584/${project.artifactId}:s7</image>
+						<image>${project.artifactId}:s7</image>
 					</to>
 				</configuration>
 			</plugin>

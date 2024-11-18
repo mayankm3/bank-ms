@@ -16,12 +16,13 @@ public class MessageFunctions {
     public Function<AccountsMsgDto,AccountsMsgDto> email() {
         return accountsMsgDto -> {
             log.info("Sending email with the details : " +  accountsMsgDto.toString());
+			// Code to send actual email to end user
             return accountsMsgDto;
         };
     }
 
     @Bean
-    public Function<AccountsMsgDto,Long> sms() {
+    public Function<AccountsMsgDto, Long> sms() {
         return accountsMsgDto -> {
             log.info("Sending sms with the details : " +  accountsMsgDto.toString());
             return accountsMsgDto.accountNumber();

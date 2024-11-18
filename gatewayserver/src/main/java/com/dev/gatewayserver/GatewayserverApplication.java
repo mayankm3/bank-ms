@@ -46,7 +46,8 @@ public class GatewayserverApplication {
 								.addResponseHeader("X-Response-Time", LocalDateTime.now().toString())
 								.requestRateLimiter(config -> config.setRateLimiter(redisRateLimiter())
 										.setKeyResolver(userKeyResolver())))
-						.uri("lb://CARDS")).build();
+						.uri("lb://CARDS"))
+				.build();
 	}
 
 	@Bean

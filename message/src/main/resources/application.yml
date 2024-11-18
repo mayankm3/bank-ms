@@ -9,9 +9,11 @@ spring:
       definition: email|sms
     stream:
       bindings:
+        # consumer
         emailsms-in-0:
           destination: send-communication
           group: ${spring.application.name}
+        # producer
         emailsms-out-0:
           destination: communication-sent
       kafka:

@@ -49,7 +49,7 @@ public class CustomerServiceImpl implements ICustomerService {
         }
 
         ResponseEntity<CardsDto> cardsDtoResponseEntity = cardsFeignClient.fetchCardDetails(correlationId, mobileNumber);
-        if(null != cardsDtoResponseEntity) {
+        if(cardsDtoResponseEntity != null) {
             customerDetailsDto.setCardsDto(cardsDtoResponseEntity.getBody());
         }
 

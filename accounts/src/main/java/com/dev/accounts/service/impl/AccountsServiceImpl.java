@@ -50,11 +50,16 @@ public class AccountsServiceImpl implements IAccountsService {
         sendCommunication(savedAccount, savedCustomer);
     }
 
+    /**
+     * This function triggers an event/message whenever we invoke /create. See above method createAccount.
+     * @param account
+     * @param customer
+     */
     private void sendCommunication(Accounts account, Customer customer) {
         var accountsMsgDto = new AccountsMsgDto(account.getAccountNumber(), customer.getName(),
                 customer.getEmail(), customer.getMobileNumber());
         log.info("Sending Communication request for the details: {}", accountsMsgDto);
-        var result = streamBridge.send("sendCommunication-out-0", accountsMsgDto);
+        boolean result = streamBridge.send("sendCommunication-out-0", accountsMsgDto);
         log.info("Is the Communication request successfully triggered ? : {}", result);
     }
 
@@ -138,9 +143,9 @@ public class AccountsServiceImpl implements IAccountsService {
                     () -> new ResourceNotFoundException("Account", "AccountNumber", accountNumber.toString())
             );
             accounts.setCommunicationSw(true);
-            accountsRepository.save(accounts);
+            accountsRepository.save(accounts);  // this will update the switch value from false to true
             isUpdated = true;
         }
-        return  isUpdated;
+        return isUpdated;
     }
 }

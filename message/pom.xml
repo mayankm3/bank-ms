@@ -70,7 +70,7 @@
 				<version>3.4.0</version>
 				<configuration>
 					<to>
-						<image>syr60584/${project.artifactId}:s7</image>
+						<image>${project.artifactId}:s7</image>
 					</to>
 				</configuration>
 			</plugin>

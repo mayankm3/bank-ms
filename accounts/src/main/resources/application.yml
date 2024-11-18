@@ -1,5 +1,6 @@
 server:
   port: 8080
+
 spring:
   application:
     name: "accounts"
@@ -24,9 +25,11 @@ spring:
       definition: updateCommunication
     stream:
       bindings:
+        #consumer
         updateCommunication-in-0:
           destination: communication-sent
           group: ${spring.application.name}
+        # producer
         sendCommunication-out-0:
           destination: send-communication
       kafka:
