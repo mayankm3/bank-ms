@@ -111,8 +111,6 @@ services:
   accounts:
     image: "accounts:s7"
     container_name: accounts-ms
-    ports:
-      - "8080:8080"
     healthcheck:
       test: "curl --fail --silent localhost:8080/actuator/health/readiness | grep UP || exit 1"
       interval: 20s
@@ -137,8 +135,6 @@ services:
   loans1:
     image: "loans:s7"
     container_name: loans-ms1
-    ports:
-      - "8090:8090"
     healthcheck:
       test: "curl --fail --silent localhost:8090/actuator/health/readiness | grep UP || exit 1"
       interval: 20s
@@ -161,9 +157,7 @@ services:
 
   loans2:
     image: "loans:s7"
-    container_name: loans-ms2
-    ports:
-      - "8091:8090"
+    container_name: loans-ms2"
     healthcheck:
       test: "curl --fail --silent localhost:8090/actuator/health/readiness | grep UP || exit 1"
       interval: 20s
@@ -187,8 +181,6 @@ services:
   cards:
     image: "cards:s7"
     container_name: cards-ms
-    ports:
-      - "9000:9000"
     healthcheck:
       test: "curl --fail --silent localhost:9000/actuator/health/readiness | grep UP || exit 1"
       interval: 20s
